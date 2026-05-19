@@ -13,10 +13,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
+
     @Id
     private String id;
-    private String usernama;
+
+    private String username;
+
     private String password;
-    @OneToOne (mappedBy = "User", cascade = CascadeType.ALL)
-    private User profile;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Profile profile;
 }
